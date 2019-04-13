@@ -56,8 +56,6 @@ main = do
     -- Run redis
     conn <- Red.checkedConnect redisConnInfo
     putStrLn " | Redis connected"
-    -- Testing redis
-    runRedis conn $ hmset "Random Fuck" $ cardToHash $ makeCard "lazyFuck"
     scotty 3000 $ do
         -- Just testing scotty's json capabilities here, no redis involved
         get "/:word" $ do
