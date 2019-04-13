@@ -1,0 +1,20 @@
+name:          novus
+version:       0.0.1
+cabal-version: >= 1.8
+build-type:    Simple
+
+executable          novus
+    main-is:        Main.hs
+    hs-source-dirs: app
+    ghc-options:    -Wall -threaded -O2 -rtsopts -with-rtsopts=-N
+    extensions:     OverloadedStrings
+    default-language: Haskell2010
+    build-depends:  base   >= 4      && < 5
+                  , scotty
+                  , containers
+                  , aeson
+                  , hedis
+                  , transformers
+                  , bytestring
+                  , utf8-string
+                  , network
